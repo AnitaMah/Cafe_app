@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_theme.dart';
 
+/// The Home tab: the café's pitch, plus shortcut buttons to the Location
+/// and Menu tabs.
 class HomeScreen extends StatelessWidget {
+  /// Called with a bottom-nav tab index (`3` for Location, `1` for Menu)
+  /// when a shortcut button is tapped, so `RootNav` can switch tabs.
   final void Function(int tabIndex) onNavigate;
 
   const HomeScreen({super.key, required this.onNavigate});

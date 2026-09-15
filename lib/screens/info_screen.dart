@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_theme.dart';
 
+/// The Info tab: the café's story, and its current hiring status.
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
 

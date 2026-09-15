@@ -6,17 +6,38 @@ import 'package:google_fonts/google_fonts.dart';
 class AppColors {
   AppColors._();
 
+  /// Page background — near-black, warm rather than neutral.
   static const background = Color(0xFF0D0B09);
+
+  /// Primary text color on dark surfaces.
   static const cream = Color(0xFFEFE6D8);
+
+  /// Deep brown used for card/section surfaces, e.g. the Events tab's event
+  /// cards.
   static const espresso = Color(0xFF3D2B1F);
+
+  /// Secondary text, dividers, and unselected bottom-nav items.
   static const tan = Color(0xFF8A6F52);
+
+  /// Brand accent (burnt orange) — category headings, prices, the active
+  /// bottom-nav item, and primary buttons.
   static const accent = Color(0xFFD97A3F);
+
+  /// Reserved for a pressed/hover state on [accent]; not yet wired into
+  /// [theme].
   static const accentHover = Color(0xFFC76A30);
 }
 
+/// Builds the app's [ThemeData].
+///
+/// Naomi's Coffee Club is dark-only by design — there's no light theme to
+/// switch to — so [theme] is the single source [NaomisApp] uses.
 class AppTheme {
   AppTheme._();
 
+  /// The app's theme: [AppColors] tokens, Cormorant Garamond for display
+  /// text (category headings, prices, the app bar title), and Work Sans for
+  /// body text.
   static ThemeData get theme {
     final displayFont = GoogleFonts.cormorantGaramond();
     final bodyFont = GoogleFonts.workSans();

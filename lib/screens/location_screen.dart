@@ -3,13 +3,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../theme/app_theme.dart';
 
+/// The Location tab: address, opening hours, and a button that opens the
+/// address in Google Maps.
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});
 
+  /// Google Maps search link for the café's address (AB 13, Heilbronn).
   static final Uri _mapsUri = Uri.parse(
     'https://www.google.com/maps/search/?api=1&query=AB+13,+Heilbronn,+Germany',
   );
 
+  /// Opens [_mapsUri] in the device's default maps app or browser.
   Future<void> _openMaps() async {
     await launchUrl(_mapsUri, mode: LaunchMode.externalApplication);
   }
@@ -68,6 +72,8 @@ class LocationScreen extends StatelessWidget {
   }
 }
 
+/// One row of the opening-hours table: a day range on the left, the hours
+/// on the right.
 class _HoursRow extends StatelessWidget {
   final String label;
   final String hours;

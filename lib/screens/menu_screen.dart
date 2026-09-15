@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import '../data/menu_data.dart';
 import '../theme/app_theme.dart';
 
+/// The Menu tab: every [MenuCategory] in [menuData], with each item's name,
+/// optional description, and price.
+///
+/// Pure presentation — add or edit dishes in [menuData], not here.
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 

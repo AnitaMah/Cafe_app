@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_theme.dart';
 
+/// A single upcoming event or recurring special shown on [EventsScreen].
 class _EventItem {
+  /// When it happens, e.g. `"Every Sunday"` or `"Seasonal"` — shown as-is,
+  /// not parsed as a real date.
   final String date;
   final String title;
   final String description;
@@ -14,6 +17,8 @@ class _EventItem {
   });
 }
 
+/// Recurring specials and seasonal one-offs. There's no backing data
+/// source yet — add or remove events by editing this list directly.
 const List<_EventItem> _events = [
   _EventItem(
     date: 'Every Sunday',
@@ -28,6 +33,7 @@ const List<_EventItem> _events = [
   ),
 ];
 
+/// The Events tab: recurring specials and seasonal one-offs from [_events].
 class EventsScreen extends StatelessWidget {
   const EventsScreen({super.key});
 

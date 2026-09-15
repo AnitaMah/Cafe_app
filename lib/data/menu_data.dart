@@ -1,8 +1,19 @@
 /// Menu content — kept in sync with the website's menu section
 /// (naomis-coffee-club/index.html).
+library;
+
+/// A single menu item: what it is, what's in it, and what it costs.
+///
+/// Rendered by `MenuScreen` inside its category's section.
 class MenuItem {
+  /// The dish or drink name, as printed on the menu.
   final String name;
+
+  /// Short ingredient line, e.g. "eggs, avocado, sourdough, seasonal
+  /// sides". Left `null` for self-explanatory items like "Espresso".
   final String? description;
+
+  /// Price, pre-formatted with its currency symbol (e.g. `"€14.50"`).
   final String price;
 
   const MenuItem({
@@ -12,8 +23,12 @@ class MenuItem {
   });
 }
 
+/// A named group of [MenuItem]s, e.g. "Brunch" or "Coffee".
 class MenuCategory {
+  /// Section heading shown above its items.
   final String name;
+
+  /// The items in this category, in menu order.
   final List<MenuItem> items;
 
   const MenuCategory({
@@ -22,6 +37,10 @@ class MenuCategory {
   });
 }
 
+/// The full menu, grouped by category, in the order shown on `MenuScreen`.
+///
+/// This is the only place menu content lives — add, remove, or re-order
+/// items and categories here.
 const List<MenuCategory> menuData = [
   MenuCategory(
     name: 'Brunch',
